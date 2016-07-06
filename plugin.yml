@@ -1,0 +1,22 @@
+name: iProtectorPortals
+main: iProtectorPortals\Main
+version: 1.0.0 BETA
+api: 2.0.0
+author: MCPEPIG
+depend: iProtector
+
+permissions:
+ portal:
+  default: op
+  description: "Allows using all iProtectorPortal features" 
+  children:
+    portal.use:
+      default: true
+      description: "Allow using all iProtectorPortals"
+    portal.command:
+      default: op
+      description: "Allow using all iProtectorPortal commands"
+      children:
+        portal.command.portal:
+          default: op
+          description: "Allow using /portal"
