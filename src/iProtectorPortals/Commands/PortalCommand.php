@@ -9,8 +9,7 @@ use pocketmine\command\CommandSender;
 use pocketmine\Player;
 
 class PortalCommand extends VanillaCommand{
-
-	public function __construct($name, $plugin) {
+	public function __construct($name, $plugin){
 		parent::__construct(
 			$name, "Setup a portal", "/portal <name> <x> <y> <z> [world]"
 		);
@@ -18,10 +17,14 @@ class PortalCommand extends VanillaCommand{
 		$this->plugin = $plugin;
 	}
 
+<<<<<<< HEAD
 	  public function execute(CommandSender $sender, $currentAlias, array $args) {
         if(!$this->testPermission($sender)){
             return true;
         }
+=======
+	  public function execute(CommandSender $sender, $currentAlias, array $args){
+>>>>>>> origin/master
 		if(!isset($args[0])){
 			$sender->sendMessage("/portal <create|remove|list>");
 			return false;
