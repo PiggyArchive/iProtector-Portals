@@ -19,6 +19,9 @@ class PortalCommand extends VanillaCommand{
 	}
 
 	  public function execute(CommandSender $sender, $currentAlias, array $args) {
+        if(!$this->testPermission($sender)){
+            return true;
+        }
 		if(!isset($args[0])){
 			$sender->sendMessage("/portal <create|remove|list>");
 			return false;
