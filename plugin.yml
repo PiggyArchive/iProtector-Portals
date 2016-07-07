@@ -1,6 +1,6 @@
 name: iProtectorPortals
 main: iProtectorPortals\Main
-version: 1.0.0 BETA
+version: 1.0.0
 api: 2.0.0
 author: MCPEPIG
 depend: iProtector
