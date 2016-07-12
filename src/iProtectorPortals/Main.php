@@ -7,15 +7,14 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 
 class Main extends PluginBase{
-
 	public $portals = array();
 	public $portallist;
 
 	public function onEnable(){
 		@mkdir($this->getDataFolder());
-    	$this->portallist = new Config($this->getDataFolder() . "portals.yml", Config::YAML);
-    	$this->loadPortals();
-    	$this->getServer()->getCommandMap()->register('portal', new PortalCommand('portal', $this));
+		$this->portallist = new Config($this->getDataFolder() . "portals.yml", Config::YAML);
+		$this->loadPortals();
+		$this->getServer()->getCommandMap()->register('portal', new PortalCommand('portal', $this));
 		$this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
 		$this->getLogger()->info("Enabled!");
 	}

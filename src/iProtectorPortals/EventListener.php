@@ -17,7 +17,7 @@ class EventListener implements Listener{
 	public function onPLayerMove(PlayerMoveEvent $event){	
 		$player = $event->getPlayer();	
 		foreach($this->plugin->portals as $name => $data){
-    		foreach($this->plugin->getServer()->getPluginManager()->getPlugin("iProtector")->areas as $area){ 
+			foreach($this->plugin->getServer()->getPluginManager()->getPlugin("iProtector")->areas as $area){ 
     			if($area->getName() == $name){
       				if($area->contains(new Vector3($player->x, $player->y, $player->z), $player->getLevel()->getName())){  
       					$from = new Location($player->x, $player->y, $player->z, $player->yaw, $player->pitch, $player->getLevel());
@@ -35,7 +35,7 @@ class EventListener implements Listener{
       					$event->setTo($ev->getTo());
       				}
       			}   
-        	}
+      		}
 		}	
 	}
 
