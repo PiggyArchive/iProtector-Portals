@@ -9,10 +9,9 @@ use pocketmine\level\Location;
 use pocketmine\math\Vector3;
 
 class EventListener implements Listener{
-	
-	public function __construct($plugin){
-		$this->plugin = $plugin;
-	}
+    public function __construct($plugin){
+	$this->plugin = $plugin;
+    }
 
 	public function onPLayerMove(PlayerMoveEvent $event){	
 		$player = $event->getPlayer();	
