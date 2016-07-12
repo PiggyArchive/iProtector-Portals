@@ -18,7 +18,7 @@ class EventListener implements Listener{
 		$player = $event->getPlayer();	
 		foreach($this->plugin->portals as $name => $data){
 			foreach($this->plugin->getServer()->getPluginManager()->getPlugin("iProtector")->areas as $area){ 
-    			if($area->getName() == $name){
+				if($area->getName() == $name){
       				if($area->contains(new Vector3($player->x, $player->y, $player->z), $player->getLevel()->getName())){  
       					$from = new Location($player->x, $player->y, $player->z, $player->yaw, $player->pitch, $player->getLevel());
       					$to = new Location($data[0], $data[1], $data[2], $player->yaw, $player->pitch, $this->plugin->getServer()->getLevelByName($data[3]));
