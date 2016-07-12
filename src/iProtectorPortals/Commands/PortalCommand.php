@@ -24,7 +24,7 @@ class PortalCommand extends VanillaCommand{
         if(!isset($args[0])){
             $sender->sendMessage("/portal <create|remove|list>");
             return false;
-	    }
+        }
         switch($args[0]){
             case "create":
                 if(count($args) < 5){
