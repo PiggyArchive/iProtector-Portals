@@ -31,7 +31,7 @@ class PortalCommand extends VanillaCommand{
                     $sender->sendMessage("/portal create <name> <x> <y> <z> [level]");
                     return false;
                 }
- 		        if(!(isset($this->plugin->getServer()->getPluginManager()->getPlugin("iProtector")->areas[strtolower($args[1])]))){
+                if(!(isset($this->plugin->getServer()->getPluginManager()->getPlugin("iProtector")->areas[strtolower($args[1])]))){
                     $sender->sendMessage("§cArea doesn't exist.");
                     return false;
                 }
@@ -44,7 +44,7 @@ class PortalCommand extends VanillaCommand{
                     if(!$this->plugin->getServer()->isLevelGenerated($args[5])){
                         $sender->sendMessage("§cInvalid world. (case-sensitive)");
                         return false;        
-                    } 
+                    }
                     $level = $args[5];       
                 }else{
                     if($sender instanceof Player){
@@ -62,7 +62,7 @@ class PortalCommand extends VanillaCommand{
                 }
                 $this->plugin->createPortal($ev->getPortal(), $ev->getX(), $ev->getY(), $ev->getZ(), $ev->getLevel());
                 $sender->sendMessage("§aPortal created.");
-		        return true;
+                return true;
             case "remove":
                 if(!isset($args[1])){
                     $sender->sendMessage("/portal remove <name>");
@@ -96,7 +96,6 @@ class PortalCommand extends VanillaCommand{
                 $sender->sendMessage("§aPortals:§f " . $portals);
                 return true;
         }
-
-	}
+    }
 
 }
