@@ -19,13 +19,11 @@ class EventListener implements Listener{
             foreach($this->plugin->getServer()->getPluginManager()->getPlugin("iProtector")->
                 areas as $area){
                 if($area->getName() == $name){
-                    if($area->contains(new Vector3($player->x,$player->y,$player->z),$player->
+                    if($area->contains(new Vector3($player->x, $player->y, $player->z), $player->
                         getLevel()->getName())){
-                        $from = new Location($player->x,$player->y,$player->z,$player->yaw,$player->
-                            pitch,$player->getLevel());
-                        $to = new Location($data[0],$data[1],$data[2],$player->yaw,$player->pitch,$this->
-                            plugin->getServer()->getLevelByName($data[3]));
-                        $ev = new PortalUseEvent($player,$from,$to,$name);
+                        $from = new Location($player->x, $player->y, $player->z, $player->yaw, $player->pitch, $player->getLevel());
+                        $to = new Location($data[0], $data[1], $data[2], $player->yaw, $player->pitch, $this->plugin->getServer()->getLevelByName($data[3]));
+                        $ev = new PortalUseEvent($player, $from, $to, $name);
                         $this->plugin->getServer()->getPluginManager()->callEvent($ev);
                         if($ev->isCancelled()){
                             return true;
