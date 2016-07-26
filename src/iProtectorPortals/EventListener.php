@@ -12,7 +12,7 @@ class EventListener implements Listener {
         $this->plugin = $plugin;
     }
 
-    public function onPLayerMove(PlayerMoveEvent $event) {
+    public function onPlayerMove(PlayerMoveEvent $event) {
         $player = $event->getPlayer();
         foreach($this->plugin->portals as $name => $data) {
             foreach($this->plugin->getServer()->getPluginManager()->getPlugin("iProtector")->areas as $area) {
