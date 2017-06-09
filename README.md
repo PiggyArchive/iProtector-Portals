@@ -3,7 +3,7 @@ Addon for iProtector to create portals! Suggested by CapuchinX.
 
 # Changelog
 
-###v1.0.0
+### v1.0.0
 * First Release
 
 # Tutorial
